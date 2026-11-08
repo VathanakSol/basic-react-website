@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 const features = [
-  { icon: "⚡", title: "Fast", text: "Built with React for a snappy, responsive experience." },
-  { icon: "🎨", title: "Modern UI", text: "Clean, minimal design that works on any screen size." },
+  { icon: "⚡", title: "Fast", text: "Built with React for a snappy, responsive experience that feels instant." },
+  { icon: "🎨", title: "Modern UI", text: "A clean, minimal design with smooth animations that works on any screen size." },
   { icon: "📦", title: "Easy to extend", text: "Component-based structure makes it simple to add pages and features." },
 ];
 
@@ -11,7 +11,7 @@ function Header() {
   return (
     <header className="site-header">
       <div className="container nav">
-        <span className="logo">My&nbsp;Site</span>
+        <span className="logo">My<span className="accent">Site</span></span>
         <button
           className="nav-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -47,6 +47,7 @@ function Features() {
     <section id="features" className="section">
       <div className="container">
         <h2>Features</h2>
+        <p className="subtitle">Everything you need to get started, in one tidy place.</p>
         <div className="grid">
           {features.map((f) => (
             <div key={f.title} className="card">
@@ -66,6 +67,7 @@ function About() {
     <section id="about" className="section alt">
       <div className="container">
         <h2>About</h2>
+        <p className="subtitle">A little more about what this project is.</p>
         <p>
           This is a starter website created with React. It uses function components,
           hooks for state, and a small amount of CSS to keep things tidy. Use it as a
@@ -82,6 +84,7 @@ function Contact() {
     <section id="contact" className="section">
       <div className="container narrow">
         <h2>Contact</h2>
+        <p className="subtitle">Have a question? Drop us a line below.</p>
         {sent ? (
           <p className="thanks">Thanks! Your message has been received. ✅</p>
         ) : (
